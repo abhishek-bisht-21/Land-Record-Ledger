@@ -36,3 +36,8 @@ class Blockchain:
 
 
 		return new_proof
+
+
+	def hash(self,block):
+		encoded_block = json.dumps(block).encode
+		return hashlib.sha256(encoded_block).hexidigest()
