@@ -3,6 +3,7 @@ import hashlib
 import json
 from flask import Flask,jsonify,request
 
+# structuring the blockhain
 class Blockchain:
 	def __init__(self):
 		self.chain = []
@@ -66,3 +67,16 @@ class Blockchain:
 	
 	def get_previous_block(self):
 		return self.chain[-1]
+	
+
+
+
+# Flask Code creating webapp
+
+app = Flask(__name__)
+
+@app.route("/")
+def hello_world():
+	return "<p> hello World!</p>
+
+app.run(port=8000,debug=True)
