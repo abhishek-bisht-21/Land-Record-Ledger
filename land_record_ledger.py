@@ -21,3 +21,18 @@ class Blockchain:
 		}
 		self.chain.append(block)
 		return block 
+
+	
+	def proof_of_work(self,previous_proof):
+		new_proof = 1
+		check_proof = False
+
+		while check_proof is False:
+			hash_val = hashlib.sha256(str(new proof**2-previous_proof**2).encode()).hexidigest()
+			if hash_val[:4] = '0000':
+				check_proof = True
+			else:
+				new_proof+=1
+
+
+		return new_proof
